@@ -1,0 +1,15 @@
+{
+	"name": "VidalOnline search", 
+	"version": "0.1",  
+	"description": "Recherche sur vidalonline", 
+	"browser_action": {
+		"default_icon": "images/icon.png",  
+		"default_title": "Search",
+		"popup": "search.html"  
+	},
+	"permissions": ["http://*/*","https://*/*"],
+	"content_scripts": [{
+		"js": ["vidalOnline.js"],
+		"matches": ["http://*/*"]
+	}]
+}
