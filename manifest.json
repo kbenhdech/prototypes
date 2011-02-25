@@ -7,7 +7,7 @@
 		"default_title": "Search",
 		"popup": "search.html"  
 	},
-	"permissions": ["http://*/*","https://*/*"],
+	"permissions": ["http://*/*", "https://*/*", "tabs"],
 	"content_scripts": [{
 		"js": ["vidalOnline.js"],
 		"matches": ["http://*/*"]
