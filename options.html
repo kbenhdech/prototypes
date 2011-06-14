@@ -1,0 +1,41 @@
+<html>
+<head><title>Options</title></head>
+
+<script type="text/javascript">
+// Saves options to localStorage.
+function save_options() {
+  var inputText = document.getElementById("bookmark_url").value;
+  localStorage["bookmark_url"] = inputText;
+
+  // Update status to let user know options were saved.
+  var status = document.getElementById("status");
+  status.innerHTML = "Sauvergarde r&eacute;ussi";
+  setTimeout(function() {
+    status.innerHTML = "";
+  }, 750);
+}
+
+// Restores select box state to saved value from localStorage.
+function restore_options() {
+  var bookmark_url = localStorage["bookmark_url"];
+  if (!bookmark_url) {
+    return;
+  }
+  document.getElementById("bookmark_url").value = bookmark_url;
+}
+
+function doSaveOnEnter(){
+    if (event.keyCode== 13)
+        save_options();
+}
+</script>
+
+<body onload="restore_options()">
+   Url du bookmark pour l'auto-logging
+   <input id="bookmark_url" value="" border="0" onkeydown="doSaveOnEnter();"/>
+   <br>
+   <button  type="button" onClick="save_options()" id="validationButton">Sauvegarder</button>
+   <div id="status"></div>
+</body>
+
+</html>

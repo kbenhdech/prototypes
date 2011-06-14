@@ -1,7 +1,7 @@
 {
-	"name": "VidalOnline search", 
+	"name": "VIDAL Hoptimal search", 
 	"version": "0.1",  
-	"description": "Recherche sur vidalonline", 
+	"description": "Recherche sur VIDAL Hoptimal", 
 	"browser_action": {
 		"default_icon": "images/icon.png",  
 		"default_title": "Search",
@@ -9,7 +9,8 @@
 	},
 	"permissions": ["http://*/*", "https://*/*", "tabs"],
 	"content_scripts": [{
-		"js": ["vidalOnline.js"],
+		"js": ["vidalHoptimal.js"],
 		"matches": ["http://*/*"]
-	}]
+	}],
+        "options_page": "options.html"
 }
